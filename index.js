@@ -20,14 +20,8 @@ mongoose.connection.on("connected" , ()=>{console.log("connected to mongo")})
 
 // false case - not established
 mongoose.connection.on("error" , (err)=>{console.log("error connecting to mongo", err)})
-
-
-
 app.use(express.json());
-
 app.use("/api/auth",userRouter);
-
-
 app.listen(port, () => {
   console.log(`Authy app listening at http://localhost:${port}`)
 })
